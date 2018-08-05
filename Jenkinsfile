@@ -9,7 +9,7 @@ pipeline{
       }
       stage('test'){
 	steps{
-	   echo "Lets test the game-of-life"
+	   echo "Lets.... test the game-of-life"
 	}
       }
    }
