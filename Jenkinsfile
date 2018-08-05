@@ -8,11 +8,11 @@ pipeline{
 	   sh 'mvn clean'
 	}
       }
-   }
-   postbuild{
-      always{
+     stage('Test'){
+      steps{
 	 archive "**/target/*.jar"
 	 junit 'target/surefire-reports/*.xml'
       }
-   }
+     }
+  }
 }
