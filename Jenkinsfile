@@ -10,7 +10,7 @@ pipeline{
       }
      stage('Test'){
       steps{
-	 archive "**/target/*.jar"
+	 archiveArtifacts artifacts: "**/target/*.jar"
 	 junit 'target/surefire-reports/*.xml'
       }
      }
