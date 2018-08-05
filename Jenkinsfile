@@ -3,10 +3,10 @@ pipeline{
    agent any
    stages{
       stage('build'){
-	echo "Lets build game-of-life"
+	sh 'echo "Lets build game-of-life"'
       }
       stage('test'){
-        echo "Lets test the game-of-life"
+        sh 'echo "Lets test the game-of-life"'
       }
    }
 }
