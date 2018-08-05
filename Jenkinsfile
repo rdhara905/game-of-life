@@ -5,7 +5,7 @@ pipeline{
       stage('build'){
 	steps{
 	   echo "Lets build game-of-life"
-	   sh 'mvn clean'
+	   sh 'mvn clean install'
 	}
       }
      stage('Test'){
