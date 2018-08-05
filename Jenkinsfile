@@ -8,10 +8,11 @@ pipeline{
 	   sh 'mvn clean'
 	}
       }
-      stage('test'){
-	steps{
-	   echo "Lets.... test the game-of-life"
-	}
+   }
+   postbuild{
+      always{
+	 archive "**/target/*.jar"
+	 junit 'target/surefire-reports/*.xml'
       }
    }
 }
