@@ -14,6 +14,7 @@ pipeline {
                     steps {
                         echo "Lets start test cases"
                         sh 'mvn clean'
+                        sh 'mvn test'
                     }
                 }
             }
