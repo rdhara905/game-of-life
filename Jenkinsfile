@@ -15,6 +15,7 @@ pipeline {
                         echo "Lets start test cases"
                         sh 'mvn clean'
                         sh 'mvn test'
+                        junit '**/target/surefire-reports/*.xml'
                     }
                 }
             }
