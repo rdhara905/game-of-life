@@ -13,8 +13,8 @@ pipeline {
                 stage('Test') {
                     steps {
                         echo "Lets start test cases"
-                        sh 'mvn clean'
-                        sh 'mvn test'
+                        sh 'mvn clean package'
+                        archiveArtifacts artifacts: "**/target/*.jar"
                         junit '**/target/surefire-reports/*.xml'
                     }
                 }
