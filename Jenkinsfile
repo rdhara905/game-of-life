@@ -1,17 +1,15 @@
 //Declarative//
 pipeline {
     agent any
-    parallel {
-        stages {
-            stage('build') {
+    stages {
+        parallel {
+            stage('Build') {
                 steps {
                     echo "Lets build game-of-life"
                     sh 'mvn clean install'
                 }
             }
-        }
-        
-        stages {
+            
             stage('Test') {
                 steps {
                     archiveArtifacts artifacts: "**/target/*.jar"
@@ -21,4 +19,3 @@ pipeline {
         }
     }
 }
-    
