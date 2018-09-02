@@ -10,9 +10,10 @@ pipeline {
                         sh 'mvn clean package'
                     }
                 }
-                agent label: "slave1"
+                
                 stage('Test') {
                     steps {
+                        agent label: "slave1"
                         echo "Lets start test cases"
                         sh 'mvn clean'
                         sh 'mvn install'
