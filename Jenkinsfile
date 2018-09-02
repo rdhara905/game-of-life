@@ -1,10 +1,11 @@
 //Declarative//
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Run Project') {
             parallel {
                 stage('Build') {
+                    agent any
                     steps {
                         echo "Lets build game-of-life"
                         sh 'mvn clean package'
@@ -12,8 +13,8 @@ pipeline {
                 }
                 
                 stage('Test') {
+                    agent label: "slave1"
                     steps {
-                        agent label: "slave1"
                         echo "Lets start test cases"
                         sh 'mvn clean'
                         sh 'mvn install'
