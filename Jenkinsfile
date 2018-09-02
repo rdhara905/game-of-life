@@ -13,6 +13,7 @@ pipeline {
                 stage('Test') {
                     steps {
                         archiveArtifacts artifacts: "**/target/*.jar"
+                        sh 'mvn test'
                         junit '**/target/surefire-reports/*.xml'
                     }
                 }
