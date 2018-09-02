@@ -1,7 +1,7 @@
 //Declarative//
 pipeline{
    agent any
-	parallel {
+	parallel{
 	   stages{
 	      stage('build'){
 		steps{
