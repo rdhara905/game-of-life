@@ -13,7 +13,8 @@ pipeline {
                 stage('Test') {
                     steps {
                         echo "Lets start test cases"
-                        sh 'mvn clean install'
+                        sh 'mvn clean'
+                        sh 'mvn install'
                         archiveArtifacts artifacts: "**/target/*.jar"
                    
                     }
