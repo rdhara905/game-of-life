@@ -14,7 +14,7 @@ pipeline {
                 
                 stage('Test') {
                     agent {
-                        label "slave1"
+                        label 'slave1'
                     }
                     steps {
                         echo "Lets start test cases"
