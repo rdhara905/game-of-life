@@ -18,6 +18,9 @@ pipeline {
                     }
                     steps {
                         echo "Lets start test cases"
+                        sh 'export M2_HOME="/usr/local/src/apache-maven"'
+                        sh 'export PATH=$PATH:$M2_HOME/bin'
+                        sh 'mvn --version'
                         sh 'mvn clean package'
                         archiveArtifacts artifacts: "**/target/*.jar"
                         junit '**/target/surefire-reports/*.xml'
