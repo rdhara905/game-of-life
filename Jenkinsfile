@@ -21,6 +21,7 @@ pipeline {
                         sh 'echo $M2_HOME'
                         sh 'export PATH=${M2_HOME}/bin:${PATH}'
                         sh 'echo $PATH'
+                        sh 'mvn --version'
                         sh 'mvn clean package'
                         archiveArtifacts artifacts: "**/target/*.jar"
                         junit '**/target/surefire-reports/*.xml'
