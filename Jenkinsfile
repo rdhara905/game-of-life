@@ -19,6 +19,7 @@ pipeline {
                     steps {
                         echo "Lets start test cases"
                         sh 'echo $M2_HOME'
+                        sh 'export PATH=${M2_HOME}/bin:{PATH}
                         sh 'echo $PATH'
                         sh 'mvn clean package'
                         archiveArtifacts artifacts: "**/target/*.jar"
