@@ -13,7 +13,9 @@ pipeline {
                 }
                 
                 stage('Test') {
-                    agent any
+                    agent {
+                        label "slave1"
+                    }
                     steps {
                         echo "Lets start test cases"
                         sh 'mvn clean'
