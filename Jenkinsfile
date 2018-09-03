@@ -18,8 +18,7 @@ pipeline {
                     }
                     steps {
                         echo "Lets start test cases"
-                        sh 'mvn clean'
-                        sh 'mvn install'
+                        sh 'mvn clean package'
                         archiveArtifacts artifacts: "**/target/*.jar"
                         junit '**/target/surefire-reports/*.xml'
                     }
