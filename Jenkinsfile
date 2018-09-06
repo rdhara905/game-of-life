@@ -18,11 +18,6 @@ pipeline {
                     }
                     steps {
                         echo "Lets start test cases"
-                        sh 'echo $M2_HOME'
-                        sh 'export PATH=${M2_HOME}/bin:${PATH}'
-                        sh 'echo $MAVEN_OPTS'
-                        sh 'echo $JAVA_HOME'
-                        sh 'export PATH=${JAVA_HOME}/bin:${PATH}'
                         sh 'echo $PATH'
                         sh 'mvn --version'
                         sh 'mvn clean package'
