@@ -14,12 +14,12 @@ pipeline {
                 
                 stage('Test') {
                     agent {
-                        labels 'slave1'
+                        label 'slave1'
                     }
                     steps {
                         echo "Lets start test cases"
                         sh 'echo $PATH'
-                        sh 'mvn --version'
+                        
                         sh 'mvn clean package'
                         archiveArtifacts artifacts: "**/target/*.jar"
                         junit '**/target/surefire-reports/*.xml'
